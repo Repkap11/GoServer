@@ -11,12 +11,13 @@ import (
 func main() {
 	fmt.Println("Client")
 	arguments := os.Args
-	if len(arguments) == 1 {
-		fmt.Println("Please provide a port number!")
+	if len(arguments) == 2 {
+		fmt.Println("Please provide a server and port number!")
 		return
 	}
-	address := ":" + arguments[1]
-	connection, err := net.Dial("tcp", address)
+	server := arguments[1]
+	port := arguments[2]
+	connection, err := net.Dial("tcp", server+":"+port)
 	if err != nil {
 		fmt.Println(err)
 		return

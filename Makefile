@@ -2,7 +2,7 @@ all: out/client out/server
 
 
 client: out/client
-	@./$< 8080
+	@./$< localhost 8080
 
 server: out/server
 	@./$< 8080
