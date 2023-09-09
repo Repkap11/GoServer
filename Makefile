@@ -2,10 +2,10 @@ all: out/client out/server
 
 
 client: out/client
-	@./$<
+	@./$< 8080
 
 server: out/server
-	@./$<
+	@./$< 8080
 
 out/%: src/%/main.go
 	go build -o $@ $<
